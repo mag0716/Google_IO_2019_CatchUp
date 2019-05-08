@@ -19,6 +19,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
 
+/**
+ * preview, capture, analysis などを UseCase として扱う
+ */
 class MainActivity : AppCompatActivity() {
 
     companion object {
@@ -111,6 +114,7 @@ class MainActivity : AppCompatActivity() {
             analyzer = LuminosityAnalyzer()
         }
 
+        // UseCase を渡す
         CameraX.bindToLifecycle(this, preview, imageCapture, analyzerUseCase)
     }
 
