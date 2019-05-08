@@ -4,21 +4,23 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Matrix
 import android.os.Bundle
+import android.util.Log
 import android.util.Rational
 import android.util.Size
 import android.view.Surface
 import android.view.TextureView
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.CameraX
-import androidx.camera.core.Preview
-import androidx.camera.core.PreviewConfig
+import androidx.camera.core.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
+        private const val TAG = "CameraXCodelab"
         private const val REQUEST_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
@@ -70,7 +72,31 @@ class MainActivity : AppCompatActivity() {
             updateTransform()
         }
 
-        CameraX.bindToLifecycle(this, preview)
+        val imageCaptureConfig = ImageCaptureConfig.Builder().apply {
+            setTargetAspectRatio(Rational(1, 1))
+            setCaptureMode(ImageCapture.CaptureMode.MIN_LATENCY)
+        }.build()
+        val imageCapture = ImageCapture(imageCaptureConfig)
+        findViewById<ImageButton>(R.id.capture_button).setOnClickListener {
+            val file = File(externalMediaDirs.first(), "${System.currentTimeMillis()}.jpg")
+            imageCapture.takePicture(file,
+                object : ImageCapture.OnImageSavedListener {
+                    override fun onError(useCaseError: ImageCapture.UseCaseError, message: String, cause: Throwable?) {
+                        val msg = "Photo capture failed: $message"
+                        Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                        Log.e(TAG, message, cause)
+                        cause?.printStackTrace()
+                    }
+
+                    override fun onImageSaved(file: File) {
+                        val msg = "Photo capture succeeded : ${file.absolutePath}"
+                        Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                        Log.d(TAG, msg)
+                    }
+                })
+        }
+
+        CameraX.bindToLifecycle(this, preview, imageCapture)
     }
 
     private fun updateTransform() {
