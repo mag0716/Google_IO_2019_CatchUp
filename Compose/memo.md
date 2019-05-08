@@ -36,4 +36,19 @@
   * Compose UI library
     * UI ツールキット
   * Compose compiler
-    * Kotlin コンパイラプラグイン
+    * カスタム Kotlin コンパイラプラグイン
+* composable function を作成するために `@Composable` を利用する
+
+### Compose UI library
+
+* android-text/：text
+* android-view/：既存の View の wrapper と adapter
+* animation/：アニメーション
+* animation-core/：アニメーションシステムの内部定義
+* core/：グラフィックや描画などのシステム全体で利用するベースクラス
+* framework/：システムによって公開されているベースコンポーネント(Draw, Layout, Text)
+* layout/：基本的なレイアウトコンポーネント
+* material/：Material 仕様によって生成される UIコンポーネント群
+* platform/：ホスト側のテストから Android の実装を分離するためのないブィッそう
+* test/：テストフレームワーク
+* text/：テキストエンジン
