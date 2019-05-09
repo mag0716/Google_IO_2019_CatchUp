@@ -15,10 +15,10 @@
 - [ ] Material Theming: Build Expressively with Material Components
 - [ ] What's New in Android Development Tools
 - [ ] What's New in Architecture Components
-- [ ] What's New in Google Play
+- [x] What's New in Google Play
 - [ ] What's New in Kotlin on Android, 2 Years In
 - [ ] Jetpack Navigation
-- [ ] What's New in Shared Storage
+- [x] What's New in Shared Storage
 - [ ] Declartive UI patterns with Android Jetpack
 - [x] Introduction to the CameraX Jetpack Library
 - [ ] Android Studio: Tips and Tricks
