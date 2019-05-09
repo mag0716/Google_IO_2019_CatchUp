@@ -13,7 +13,7 @@
 - [x] Overview of Privacy Changes in Android Q
 - [ ] What's New in Android Studio UI Design and Debugging Tools
 - [ ] Material Theming: Build Expressively with Material Components
-- [ ] What's New in Android Development Tools
+- [x] What's New in Android Development Tools
 - [x] What's New in Architecture Components
 - [x] What's New in Google Play
 - [ ] What's New in Kotlin on Android, 2 Years In
