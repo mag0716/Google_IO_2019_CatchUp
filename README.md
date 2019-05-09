@@ -19,7 +19,7 @@
 - [ ] What's New in Kotlin on Android, 2 Years In
 - [ ] Jetpack Navigation
 - [x] What's New in Shared Storage
-- [ ] Declartive UI patterns with Android Jetpack
+- [ ] Declarative UI patterns with Android Jetpack
 - [x] Introduction to the CameraX Jetpack Library
 - [ ] Android Studio: Tips and Tricks
 
