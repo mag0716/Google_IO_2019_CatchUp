@@ -20,7 +20,7 @@
 - [ ] Jetpack Navigation
 - [ ] What's New in Shared Storage
 - [ ] Declartive UI patterns with Android Jetpack
-- [ ] Introduction to the CameraX Jetpack Library
+- [x] Introduction to the CameraX Jetpack Library
 - [ ] Android Studio: Tips and Tricks
 
 ## 5/9
