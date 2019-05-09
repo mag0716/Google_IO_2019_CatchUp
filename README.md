@@ -10,16 +10,24 @@
 
 ## 5/8
 
+- [x] Overview of Privacy Changes in Android Q
 - [ ] What's New in Android Studio UI Design and Debugging Tools
 - [ ] Material Theming: Build Expressively with Material Components
+- [ ] What's New in Android Development Tools
 - [ ] What's New in Architecture Components
 - [ ] What's New in Google Play
-- [ ] What's New in Kotlin on Android
-- [ ] Android Jetpack: What's New in Navigation
-- [ ] Android Jetpack: Understand the CameraX Camera-Support Library
+- [ ] What's New in Kotlin on Android, 2 Years In
+- [ ] Jetpack Navigation
+- [ ] What's New in Shared Storage
+- [ ] Declartive UI patterns with Android Jetpack
+- [ ] Introduction to the CameraX Jetpack Library
 - [ ] Android Studio: Tips and Tricks
 
 ## 5/9
 
+- [ ] Supporting mobile usability with Dark Theme and Gestures in Android Q
+- [ ] How to Design a Dark Theme Using Material
+- [ ] Kotlin Under the Hood: Understand the Internals
+- [ ] What's New in ConstraintLayout
 - [ ] Build Testable Apps for Android
-- [ ] What's New with ConstraintLayout
+- [ ] Customizable Delivery with the App Bundle and Easy Sharing of Test Builds
