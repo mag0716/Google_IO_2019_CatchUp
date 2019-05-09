@@ -14,12 +14,12 @@
 - [ ] What's New in Android Studio UI Design and Debugging Tools
 - [ ] Material Theming: Build Expressively with Material Components
 - [ ] What's New in Android Development Tools
-- [ ] What's New in Architecture Components
+- [x] What's New in Architecture Components
 - [x] What's New in Google Play
 - [ ] What's New in Kotlin on Android, 2 Years In
 - [ ] Jetpack Navigation
 - [x] What's New in Shared Storage
-- [ ] Declarative UI patterns with Android Jetpack
+- [x] Declarative UI patterns with Android Jetpack
 - [x] Introduction to the CameraX Jetpack Library
 - [ ] Android Studio: Tips and Tricks
 
