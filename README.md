@@ -17,7 +17,7 @@
 - [x] What's New in Architecture Components
 - [x] What's New in Google Play
 - [ ] What's New in Kotlin on Android, 2 Years In
-- [ ] Jetpack Navigation
+- [x] Jetpack Navigation
 - [x] What's New in Shared Storage
 - [x] Declarative UI patterns with Android Jetpack
 - [x] Introduction to the CameraX Jetpack Library
