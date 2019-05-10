@@ -28,6 +28,8 @@
 - [x] Supporting mobile usability with Dark Theme and Gestures in Android Q
 - [ ] How to Design a Dark Theme Using Material
 - [ ] Kotlin Under the Hood: Understand the Internals
-- [ ] What's New in ConstraintLayout
+- [x] What's New in ConstraintLayout
 - [ ] Build Testable Apps for Android
 - [ ] Customizable Delivery with the App Bundle and Easy Sharing of Test Builds
+
+## まとめ
