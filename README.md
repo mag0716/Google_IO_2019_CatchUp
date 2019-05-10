@@ -25,7 +25,7 @@
 
 ## 5/9
 
-- [ ] Supporting mobile usability with Dark Theme and Gestures in Android Q
+- [x] Supporting mobile usability with Dark Theme and Gestures in Android Q
 - [ ] How to Design a Dark Theme Using Material
 - [ ] Kotlin Under the Hood: Understand the Internals
 - [ ] What's New in ConstraintLayout
