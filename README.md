@@ -21,7 +21,7 @@
 - [x] What's New in Shared Storage
 - [x] Declarative UI patterns with Android Jetpack
 - [x] Introduction to the CameraX Jetpack Library
-- [ ] Android Studio: Tips and Tricks
+- [x] Android Studio: Tips and Tricks
 
 ## 5/9
 
