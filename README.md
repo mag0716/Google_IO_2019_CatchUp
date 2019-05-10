@@ -16,7 +16,7 @@
 - [x] What's New in Android Development Tools
 - [x] What's New in Architecture Components
 - [x] What's New in Google Play
-- [ ] What's New in Kotlin on Android, 2 Years In
+- [x] What's New in Kotlin on Android, 2 Years In
 - [x] Jetpack Navigation
 - [x] What's New in Shared Storage
 - [x] Declarative UI patterns with Android Jetpack
@@ -33,3 +33,9 @@
 - [x] Customizable Delivery with the App Bundle and Easy Sharing of Test Builds
 
 ## まとめ
+
+### PL
+
+### デザイナ
+
+### テスター
