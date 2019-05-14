@@ -2,6 +2,21 @@
 
 ## https://github.com/android/camera/tree/master/CameraXBasic
 
+### 概要
+
+* 撮影
+  * 縦横対応
+  * プレビューは自動で画面いっぱいに表示する
+    * AutoFitPreviewBuilder
+* 表示
+  * 全画面表示
+  * ノッチ対応
+* 共有
+  * FileProvider
+* unit, instrumented test でのソース共有
+
+### 詳細
+
 * PermissionsFragment
   * permission をリクエスト
   * permission が許可されていたら CameraFragment へ遷移
@@ -27,9 +42,19 @@
     * DisplayManager.DisplayListener
   * TextureView のサイズからアスペクト比を再計算している
   * Preview.OnPreviewOutputUpdateListener で ViewFinder の削除、追加を行なっている
+* GalleryFragment
+  * retain Fragment
+  * 渡されたパスから jpg を取得し、ViewPager で表示
+  * Android P 以上は cutout を考慮し画面いっぱいに表示
+  * 共有用に FileProvider 経由で Uri を取得
+  * ファイルの削除はアプリで撮影したファイルが対象なので File#delete で
+* PhotoFragment
+  * 渡されたパスの画像を Glide で表示するだけ
 * ImageUtils
   * サムネイル取得のための関数
   * exif から撮影方向を取得してサムネイルの表示方向を求めている
+* AndroidManifest.xml
+  * システムのカメラアプリとして登録するための定義
 
 ### 疑問点
 
