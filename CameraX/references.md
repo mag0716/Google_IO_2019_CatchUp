@@ -78,3 +78,20 @@ Android Q 以外では、保存する場合は `WRITE_EXTERNAL_STORAGE` permissi
 
 `CameraView` を利用する場合は `androidx.camera.core:view`
 extensions は `androidx.camera.core:camera2`
+
+## Vendor extensions
+
+https://developer.android.com/training/camerax/vendor-extensions
+
+CameraX はぼかしや HDR などのデバイス固有の機能へアクセスするための API を提供する。
+API を利用するとデバイスで利用できるかどうかを確認し、使用可能であれば有効になり、なければ CameraX の機能が利用される。
+
+ベンダーは機能を提供するのは必須ではない。
+
+### Enable an effect for image capture
+
+CameraX で vender extension を有効にするために `Extender` を生成し、extension が使用可能であれば、`enableExtension` で有効化する。
+
+### Disable the effect
+
+vender extension を無効化するには、usecase を再生成する
