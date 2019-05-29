@@ -4,7 +4,7 @@
 
 - [x] Developer Keynote
 - [x] What's New in Android
-- [ ] Build a Modular Android App Architecture
+- [x] Build a Modular Android App Architecture
 - [x] Best Practices in Using the Android Emulator
 - [x] Understand Kotlin Coroutines on Android
 
