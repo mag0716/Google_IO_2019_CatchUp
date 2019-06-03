@@ -13,3 +13,51 @@ https://codelabs.developers.google.com/codelabs/android-testing/#0
   * Coroutines, ViewModel, LiveData, Room, Navigation, Data Binding のテスト
 
 ## Get the sample code
+
+`git clone -b codelab2019 --single-branch git@github.com:googlecodelabs/android-testing.git`
+
+## A Brief Introduction to Testing
+
+### The Testing Pyramid
+
+自動テストで考慮すること
+
+* Scope
+  * どのくらいの範囲のテストを行うのか？(1つのメソッド、アプリ全体)
+* Speed
+  * テストにどのくらいの時間がかかるか？
+* Fidelity
+  * どのくらい実際の状況に近いか？
+    * 例：API 経由でデータを取得すれば Fidelity は高い。が、ネットワークがダウンしていることもある
+
+テストのカテゴリ
+
+* Unit tests
+  * 通常は 1つのクラス、1つのメソッドにフォーカスしたテスト
+  * コードを変更するたびに実行できるくらいの速度にしておくべき
+* Integration tests
+  * 1機能にフォーカスしたテスト
+* End to end tests
+  * 機能を組み合わせたテスト
+
+### Testing terminology
+
+* Test Coverage
+* Test Driven Development
+* Test Doubles
+  * Fake, Dummy, Mock, Spy
+  * [詳細](https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html)
+* Given, When, Then
+
+## メモ
+
+### わかったこと
+
+* mock, product の flavor ごとに `ServiceLoader` で依存性を解決している
+  * mock は API を利用しない
+
+### 気になったこと
+
+* build.gradle
+  * useProguard
+  * dataBinding.enabledForTests
