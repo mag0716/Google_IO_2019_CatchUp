@@ -83,6 +83,12 @@ https://codelabs.developers.google.com/codelabs/android-testing/#0
 * `sharedTest` はデフォルトでは自動生成されない
   * 自分で生成し、test, androidTest の srcDir として追加する
 
+## Writing your first unit test
+
+* カバレッジの出力と同時にテストを実行することが可能
+  * with Coverage
+  * IDE 上でどこがテストされているかも見れる
+
 ## メモ
 
 ### わかったこと
