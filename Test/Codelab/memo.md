@@ -49,6 +49,17 @@ https://codelabs.developers.google.com/codelabs/android-testing/#0
   * [詳細](https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html)
 * Given, When, Then
 
+## Testing and Architecture
+
+テスタブルにするためには
+
+* クラスごとの目的を明確にする
+  * Fragment や Activity は View の描画のみでロジックは持たない
+* 他のクラスについての関心ごとを減らす
+  * ViewModel は Repository を経由して、データソースを直接触らない
+* コンストラクターインジェクションを使う
+* ViewModel から Android に関するコードを排除する
+
 ## メモ
 
 ### わかったこと
