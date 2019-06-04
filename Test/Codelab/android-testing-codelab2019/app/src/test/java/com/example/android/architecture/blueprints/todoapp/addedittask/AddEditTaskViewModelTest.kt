@@ -128,6 +128,7 @@ class AddEditTaskViewModelTest {
     fun saveNewTaskToRepository_nullTitle_error() {
         saveTaskAndAssertSnackbarError(null, "Some Task Description")
     }
+
     @ObsoleteCoroutinesApi
     @Test
     fun saveNewTaskToRepository_emptyDescription_error() {

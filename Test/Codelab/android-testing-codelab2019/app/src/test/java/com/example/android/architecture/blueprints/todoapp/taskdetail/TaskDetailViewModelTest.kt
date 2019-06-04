@@ -51,7 +51,8 @@ class TaskDetailViewModelTest {
     var coroutinesMainDispatcherRule = ViewModelScopeMainDispatcherRule(testContext)
 
     // Executes each task synchronously using Architecture Components.
-    @get:Rule var instantExecutorRule = InstantTaskExecutorRule()
+    @get:Rule
+    var instantExecutorRule = InstantTaskExecutorRule()
 
     val task = Task("Title1", "Description1")
 
@@ -73,12 +74,24 @@ class TaskDetailViewModelTest {
         // Then verify that the view was notified
         assertThat(LiveDataTestUtil.getValue(taskDetailViewModel.task).title).isEqualTo(task.title)
         assertThat(LiveDataTestUtil.getValue(taskDetailViewModel.task).description)
-            .isEqualTo(task.description)
+                .isEqualTo(task.description)
     }
 
     @Test
     fun deleteTask() {
-        // TODO
+        assertThat(tasksRepository.tasksServiceData.containsValue(task)).isTrue()
+        taskDetailViewModel.start(task.id)
+
+        // Execute pending coroutines actions
+        testContext.triggerActions()
+
+        // When the deletion of a task is requested
+        taskDetailViewModel.deleteTask()
+
+        // Execute pending coroutines actions
+        testContext.triggerActions()
+
+        assertThat(tasksRepository.tasksServiceData.containsValue(task)).isFalse()
     }
 
     @Test

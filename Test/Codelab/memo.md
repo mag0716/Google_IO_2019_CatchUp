@@ -89,6 +89,24 @@ https://codelabs.developers.google.com/codelabs/android-testing/#0
   * with Coverage
   * IDE 上でどこがテストされているかも見れる
 
+## Unit Testing with Coroutines
+
+* Coroutines を ViewModel から起動している
+  * `viewModelScope`
+* Coroutines のテストのために必要なもの
+  * `runBocking`
+    * 新たに Coroutines を開始し、完了までブロックしてくれる
+  * `ViewModelScopeMainDispatcherRule`
+    * Main Coroutines dispatcher を single thread に置き換える
+    * `TestCoroutineContext`
+  * Architecture Components
+    * `InstantTaskExecutorRule`
+      * それぞれのタスクを同期的に行うための Rule を用意している
+      * LiveData の MainLooper を mock している
+        * ArchTaskExecutor の置き換え
+    * `LiveData`
+      * LiveData は observe されないと新しい値を発行しないので、値を取得するための Utils を自前で用意している
+
 ## メモ
 
 ### わかったこと
