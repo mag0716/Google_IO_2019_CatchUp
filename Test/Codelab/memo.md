@@ -60,6 +60,29 @@ https://codelabs.developers.google.com/codelabs/android-testing/#0
 * コンストラクターインジェクションを使う
 * ViewModel から Android に関するコードを排除する
 
+## Running your first test
+
+### Local versus Instrumentation
+
+* local tests: `test`
+* instrumentation tests: `androidTest`
+
+### Robolectric and AndroidX Test
+
+* Robolectric
+  * Android フレームワークや Jetpack のコードを JVM 上での実行を可能にする
+* AndroidX Test
+  * JUnit4 互換の TestRunner
+  * Activity, Fragment のライフサイクル
+  * Espresso での View 操作
+  * Android Studio やコマンド上からの実行
+  * 実機、JVM 上のどちらでも実行が可能なテストになる
+
+### Shared Tests
+
+* `sharedTest` はデフォルトでは自動生成されない
+  * 自分で生成し、test, androidTest の srcDir として追加する
+
 ## メモ
 
 ### わかったこと
