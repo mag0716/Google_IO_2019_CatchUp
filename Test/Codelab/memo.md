@@ -107,6 +107,31 @@ https://codelabs.developers.google.com/codelabs/android-testing/#0
     * `LiveData`
       * LiveData は observe されないと新しい値を発行しないので、値を取得するための Utils を自前で用意している
 
+## Writing integration tests
+
+Integration tests を明確に定義するのは難しいので、プロジェクト毎に何のためのテストなのかを文書するのがよい。
+
+Unit tests でテストしている項目でも SQLite などデバイスによって動作が変わる可能性があるものについては Integration tests でもテストする
+E2E tests との違いは全てのレイヤーを使用してテストする
+
+### UI Testing on Android with Espresso
+
+* `ViewMatcher`：今の View 階層にある View を選択する
+  * `withId`：ID 指定で View を取得
+  * `withText`：テキスト指定で View を取得
+* `ViewAction`：指定した View に対してクリックなどの操作を行う
+* `ViewAssertion`：View の状態をチェックする
+
+### Testing navigation
+
+* `NavController` のための Fake は存在しないので、`Mockito` でモックしている
+* `Fragment` のテストにフォーカスするなら `launchFragmentInContainer` を使って空の `Activity` に対象の `Fragment` を起動できる
+* テストを確実に成功させるために端末の開発者オプションからアニメーションは無効化しておくのがよい
+
+### Testing data interactions
+
+* 同期的に値を取得するために `runBlocking` を使った拡張関数を用意している
+
 ## メモ
 
 ### わかったこと

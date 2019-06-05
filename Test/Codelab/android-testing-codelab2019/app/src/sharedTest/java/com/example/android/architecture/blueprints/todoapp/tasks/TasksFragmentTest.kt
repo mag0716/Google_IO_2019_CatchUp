@@ -13,10 +13,7 @@ import androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.hasSibling
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.MediumTest
 import com.example.android.architecture.blueprints.todoapp.R
@@ -64,13 +61,22 @@ class TasksFragmentTest {
     @Test
     fun clickAddTaskButton_navigateToAddEditFragment() {
         // GIVEN - On the home screen
-        // TODO
+        val scenario = launchFragmentInContainer<TasksFragment>(Bundle(), R.style.AppTheme)
+        val navController = mock(NavController::class.java)
+        scenario.onFragment {
+            Navigation.setViewNavController(it.view!!, navController)
+        }
 
         // WHEN - Click on the "+" button
-        // TODO
+        onView(withId(R.id.fab_add_task)).perform(click())
 
         // THEN - Verify that we navigate to the add screen
-        // TODO
+        verify(navController).navigate(
+                TasksFragmentDirections.actionTasksFragmentToAddEditTaskFragment(
+                        null,
+                        getApplicationContext<Context>().getString(R.string.add_task)
+                )
+        )
     }
 
     @Test
@@ -315,11 +321,11 @@ class TasksFragmentTest {
 
         // THEN - Verify that we navigate to the add screen
         verify(navController).navigate(
-          TasksFragmentDirections.actionTasksFragmentToAddEditTaskFragment(
-            null, getApplicationContext<Context>().getString(R.string.add_task)))
+                TasksFragmentDirections.actionTasksFragmentToAddEditTaskFragment(
+                        null, getApplicationContext<Context>().getString(R.string.add_task)))
     }
 
-    private fun checkboxWithText(text: String) : Matcher<View> {
+    private fun checkboxWithText(text: String): Matcher<View> {
         return allOf(withId(R.id.complete), hasSibling(withText(text)))
     }
 }
