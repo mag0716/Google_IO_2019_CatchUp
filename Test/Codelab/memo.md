@@ -138,6 +138,22 @@ E2E tests との違いは全てのレイヤーを使用してテストする
   * Unit Tests：`./gradlew test`
   * Android Test：`./gradlew connectedMockDebug`
 
+## Write end-to-end tests
+
+* E2E tests を書く理由
+  * 複数の端末、API レベルに対するテストする
+  * Proguard を有効にしたバイナリを使ってのテスト
+  * 遷移のテスト
+  * データレイヤー、ネットワーク接続を使ったテスト
+  * スクリーンショット
+
+### Create a navigation test
+
+* E2E tests はブラックボックステストなのでリポジトリなどはテストせず、入力と出力のみをテストする
+* Idling Resource
+  * アプリがアイドル状態を Espresso に伝え、同期的に処理を実行する手助けをする
+
+
 ## メモ
 
 ### わかったこと
@@ -150,3 +166,4 @@ E2E tests との違いは全てのレイヤーを使用してテストする
 * build.gradle
   * useProguard
   * dataBinding.enabledForTests
+* Espresso の Idling Resource を使うためにプロダクトコードに Espresso の API を呼び出している
