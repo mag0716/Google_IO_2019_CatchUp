@@ -132,6 +132,12 @@ E2E tests との違いは全てのレイヤーを使用してテストする
 
 * 同期的に値を取得するために `runBlocking` を使った拡張関数を用意している
 
+## Running Robolectric tests
+
+* コマンドでのテスト実行
+  * Unit Tests：`./gradlew test`
+  * Android Test：`./gradlew connectedMockDebug`
+
 ## メモ
 
 ### わかったこと
